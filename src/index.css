@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* ===== NEOBRUTALISM DESIGN SYSTEM ===== */
+
+@theme {
+  --color-brutal-yellow: #FFE15D;
+  --color-brutal-pink: #FF6B9D;
+  --color-brutal-blue: #4ECDC4;
+  --color-brutal-green: #A8E6CF;
+  --color-brutal-orange: #FF8A5C;
+  --color-brutal-purple: #C3A6FF;
+  --color-brutal-red: #FF6B6B;
+  --color-brutal-cream: #FFF8E7;
+  --color-brutal-lime: #BFFF00;
+  --color-brutal-cyan: #00D4FF;
+  --color-brutal-bg: #F5F0E8;
+  --color-brutal-black: #1A1A2E;
+  --font-family-heading: 'Space Grotesk', sans-serif;
+  --font-family-mono: 'Space Mono', monospace;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: var(--color-brutal-bg);
+  color: var(--color-brutal-black);
+  overflow-x: hidden;
+}
+
+/* Neobrutalism card */
+.neo-card {
+  border: 3px solid var(--color-brutal-black);
+  box-shadow: 6px 6px 0px var(--color-brutal-black);
+  transition: all 0.2s ease;
+}
+
+.neo-card:hover {
+  box-shadow: 8px 8px 0px var(--color-brutal-black);
+  transform: translate(-2px, -2px);
+}
+
+.neo-card:active {
+  box-shadow: 2px 2px 0px var(--color-brutal-black);
+  transform: translate(2px, 2px);
+}
+
+/* Neobrutalism button */
+.neo-btn {
+  border: 3px solid var(--color-brutal-black);
+  box-shadow: 4px 4px 0px var(--color-brutal-black);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.neo-btn:hover {
+  box-shadow: 6px 6px 0px var(--color-brutal-black);
+  transform: translate(-2px, -2px);
+}
+
+.neo-btn:active {
+  box-shadow: 1px 1px 0px var(--color-brutal-black);
+  transform: translate(3px, 3px);
+}
+
+/* Neobrutalism badge/tag */
+.neo-tag {
+  border: 2px solid var(--color-brutal-black);
+  box-shadow: 3px 3px 0px var(--color-brutal-black);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  text-transform: uppercase;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 20s linear infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse ring */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.pulse-ring {
+  animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* Music player wave animation */
+@keyframes wave1 { 0%, 100% { height: 8px; } 50% { height: 24px; } }
+@keyframes wave2 { 0%, 100% { height: 16px; } 50% { height: 8px; } }
+@keyframes wave3 { 0%, 100% { height: 12px; } 50% { height: 28px; } }
+@keyframes wave4 { 0%, 100% { height: 20px; } 50% { height: 10px; } }
+
+.wave-bar-1 { animation: wave1 0.8s ease-in-out infinite; }
+.wave-bar-2 { animation: wave2 0.6s ease-in-out infinite; }
+.wave-bar-3 { animation: wave3 0.7s ease-in-out infinite; }
+.wave-bar-4 { animation: wave4 0.5s ease-in-out infinite; }
+
+/* Rotating sticker */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brutal-bg);
+  border-left: 3px solid var(--color-brutal-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brutal-yellow);
+  border: 2px solid var(--color-brutal-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brutal-pink);
+}
+
+/* Selection color */
+::selection {
+  background: var(--color-brutal-yellow);
+  color: var(--color-brutal-black);
+}
+
+/* Custom range slider for music player */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: var(--color-brutal-black);
+  border: 2px solid var(--color-brutal-black);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--color-brutal-yellow);
+  border: 3px solid var(--color-brutal-black);
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--color-brutal-yellow);
+  border: 3px solid var(--color-brutal-black);
+  cursor: pointer;
+}
